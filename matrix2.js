@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var NodeCache = require("node-cache");
-var matrixCache = new NodeCache({stdTTL: 3600});
+var matrixCache = new NodeCache({stdTTL: 3600}); // cache live 1 hour
 
 function readMatrix() {
 	fs.readFile(__dirname+'/matrix2.txt', 'utf8', function(err, data) {
