@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var NodeCache = require("node-cache");
-var matrixCache = new NodeCache({stdTTL: 3600});
+var matrixCache = new NodeCache({stdTTL: 3601});
 
 function readMatrix() {
 	fs.readFile(__dirname+'/matrix2.txt', 'utf8', function(err, data) {
@@ -79,7 +79,7 @@ http.createServer(function (req, res) {
 		elapsed_time("end viewMatrix");
 	  }
 
-	// если первый раз обращаемся
+	// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	if (!matrixCache.get('matrix').matrix) {
 		matrixCache.on( "expired", function( key, value ){
 			if (key == 'matrix')  {
