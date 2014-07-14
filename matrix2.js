@@ -68,7 +68,7 @@ http.createServer(function (req, res) {
   var queryParse = require('querystring').parse(query);
   
   if (queryParse.vector) {
-	  elapsed_time("recieved request", true);
+	  elapsed_time("received request", true);
 	  var viewMatrix = function() {
 		var matrix = matrixCache.get('matrix').matrix;
 		var vector = generateMatrix(1, matrix.length)[0];
@@ -96,7 +96,7 @@ http.createServer(function (req, res) {
 	} else
 		viewMatrix();
  } else if (queryParse.generate) {
-	elapsed_time("recieved request", true);
+	elapsed_time("received request", true);
 	var size = parseInt(queryParse.generate);
 	var matrix = generateMatrix(size, size);
 	writeMatrix(JSON.stringify(matrix));	
